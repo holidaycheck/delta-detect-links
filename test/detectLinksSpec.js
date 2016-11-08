@@ -146,6 +146,18 @@ test(
 );
 
 test(
+    'skips trailing matched link if the stopword at the end is a questionmark',
+    detectWithSkipOptionMacro,
+    [
+        { insert: 'foo www.example.com?' }
+    ],
+    20,
+    [
+        { insert: 'foo www.example.com?' }
+    ]
+);
+
+test(
     'skips trailing matched links if the position of the last index is before end of the matched link',
     detectWithSkipOptionMacro,
     [
