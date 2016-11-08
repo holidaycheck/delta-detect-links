@@ -146,6 +146,18 @@ test(
 );
 
 test(
+    'skips trailing matched links if the position of the last index is before end of the matched link',
+    detectWithSkipOptionMacro,
+    [
+        { insert: 'foo www.example.com' }
+    ],
+    3,
+    [
+        { insert: 'foo www.example.com' }
+    ]
+);
+
+test(
     'contains a delta with the changes only',
     detectDeltaMacro,
     [
